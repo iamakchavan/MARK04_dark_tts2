@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  @apply bg-gray-50 dark:bg-gray-900;
+}
+
+.app-container {
+  @apply w-[400px] bg-white dark:bg-gray-800 shadow-lg rounded-lg overflow-hidden;
+  min-height: 400px;
+}
+
+.input-container {
+  @apply relative flex items-center bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 
+    hover:border-gray-300 dark:hover:border-gray-600 
+    focus-within:border-blue-500 dark:focus-within:border-blue-400 
+    focus-within:ring-2 focus-within:ring-blue-100 dark:focus-within:ring-blue-900 
+    transition-all duration-200;
+}
+
+.input-field {
+  @apply w-full px-4 py-3 bg-transparent border-none focus:outline-none 
+    text-gray-800 dark:text-gray-100 
+    placeholder-gray-400 dark:placeholder-gray-500;
+}
+
+.button-primary {
+  @apply px-4 py-2 bg-gray-100 dark:bg-gray-700 
+    hover:bg-gray-200 dark:hover:bg-gray-600 
+    text-gray-700 dark:text-gray-300 
+    rounded-full text-sm font-medium transition-colors duration-200;
+}
+
+.markdown-content {
+  @apply text-gray-700 dark:text-gray-300 text-sm leading-relaxed;
+}
+
+.markdown-content h1 {
+  @apply text-lg font-semibold mb-2;
+}
+
+.markdown-content h2 {
+  @apply text-base font-semibold mb-2;
+}
+
+.markdown-content h3 {
+  @apply text-sm font-semibold mb-2;
+}
+
+.markdown-content p {
+  @apply mb-3;
+}
+
+.markdown-content ul {
+  @apply list-disc pl-4 mb-3 space-y-1;
+}
+
+.markdown-content ol {
+  @apply list-decimal pl-4 mb-3 space-y-1;
+}
+
+.markdown-content code {
+  @apply bg-gray-50 dark:bg-gray-700 px-1.5 py-0.5 rounded text-sm font-mono;
+}
+
+.markdown-content pre {
+  @apply bg-gray-50 dark:bg-gray-700 p-3 rounded-lg mb-3 overflow-x-auto;
+}
+
+.answer-container {
+  @apply bg-white dark:bg-gray-800 rounded-lg border border-gray-100 dark:border-gray-700 p-4 space-y-2;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -100%) translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -100%) translateY(-10px);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.2s ease-out forwards;
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.3s ease-out forwards;
+}
+
+@keyframes ping {
+  75%, 100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+.animate-ping {
+  animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+@keyframes pulse {
+  50% {
+    opacity: .5;
+  }
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Selection Popup Styles */
+.selection-popup {
+  @apply shadow-xl border rounded-xl overflow-hidden;
+  filter: drop-shadow(0 4px 6px rgb(0 0 0 / 0.1));
+}
+
+.selection-popup button:disabled {
+  @apply opacity-70 cursor-not-allowed;
+}
